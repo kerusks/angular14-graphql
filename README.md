@@ -1,6 +1,10 @@
-# Ang14GqlCrud
+# Angular 14 GraphQL Refresh
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 15.2.2.
+
+## JSON GraphQL Server
+Install `npm install -g json-graphql-server`
+Run `npm run gql-server` 
+
 
 ## Development server
 

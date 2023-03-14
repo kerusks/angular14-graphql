@@ -1,0 +1,55 @@
+<div class="container">
+  <div class="row mt-2">
+      <div class="col col-md-4 offset-md-4">
+        <a class="btn btn-primary" routerLink="/add">Create Post</a>
+      </div>
+  </div>
+    <table class="table">
+        <thead>
+          <tr>
+   
+            <th scope="col">Id</th>
+            <th scope="col">Title</th>
+            <th scope="col">Views</th>
+            <th scope="col">Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let post of allPosts$ | async">
+            <th scope="row">{{post.id}}</th>
+            <td>{{post.title}}</td>
+            <td>{{post.views}}</td>
+            <td>
+              <a class="btn btn-primary" [routerLink]="['edit', post.id]">Edit</a>
+              <span class="px-2">|</span>
+              <button class="btn btn-danger" (click)="launchModal(post.id)">Delete</button>
+            </td>
+  
+          </tr>
+   
+        </tbody>
+      </table>
+</div>
+
+
+
+<!-- Modal -->
+<div class="modal fade" id="deleteModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Delete Post?</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Are you sure?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-danger" (click)="delete()">Confirm Delete</button>
+      </div>
+    </div>
+  </div>
+</div>

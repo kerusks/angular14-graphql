@@ -1,0 +1,10 @@
+<div class="container">
+    <legend>Create Post</legend>
+    <div class="mb-3">
+        <label for="txtTitle">Title</label>
+        <input type="text" class="form-control" id="txtTitle" [(ngModel)]="postForm.title">
+        <label for="txtViews">Views</label>
+        <input type="number" class="form-control" id="txtViews"  [(ngModel)]="postForm.views">
+    </div>
+    <button class="btn btn-primary" (click)="update()">Update</button>
+</div>
